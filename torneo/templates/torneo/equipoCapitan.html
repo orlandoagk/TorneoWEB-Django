@@ -1,0 +1,29 @@
+{% extends "torneo/index.html" %}
+{% load torneo_extras %}
+
+{% block content %}
+{% if fase == 1 %}
+<h3 style="width:100%;background-color:green;color:white">Ya te encuentras inscrito en el torneo actual</h3>
+{% else %}
+<h3 style="width:100%;background-color:green;color:red">NO te encuentras inscrito en el torneo actual</h3>
+{% endif %}
+<table style="width:100%;background-color:green">
+<th><h1>{{ capitan.nombreEquipo }}</h1></th>
+
+{%for integrante in capitan.integrante_set.all%}
+<tr>
+	<h4><th><a href={{"/torneo/equipo/"|addstr:integrante.pk}}>{{integrante.nombreCompleto}} {{integrante.apellidoCompleto}}</a></th></h4>
+</tr>
+{% endfor %}
+
+</table>
+
+<table style="width:100%;background-color:green">
+	<tr>
+		<th><a href ="registroIntegrante">Adicionar Integrante</a></th>
+		<th><a href ="/torneo/inscripcion">Inscribir Equipo</a></th>
+	</tr>
+	
+</table>
+
+{% endblock %}

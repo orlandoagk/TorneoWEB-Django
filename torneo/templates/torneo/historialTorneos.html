@@ -1,0 +1,26 @@
+{% extends "torneo/index.html" %}
+{% block content %}
+<h2>HISTORIAL DE TORNEOS</h2>
+
+{% for torneo in torneos %}
+<hr/>
+<h3>{{ torneo.nombre }}</h3>
+<h4><table style="width:100%">
+<tr>
+
+	<th>CAMPEON</th>
+	<th>SUB-CAMPEON</th>
+	<th>TERCER PUESTO</th>
+
+</tr> 
+<tr>
+
+	<th>{{ torneo.primerPuesto.nombreEquipo }}</th>
+	<th>{{ torneo.segundoPuesto.nombreEquipo }}</th>
+	<th>{{ torneo.tercerPuesto.nombreEquipo }}</th>
+
+</tr>
+</table></h4>
+
+{% endfor %}
+{% endblock %}

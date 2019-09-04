@@ -1,0 +1,22 @@
+{% extends "torneo/index.html" %}
+
+{% block content %}
+
+</table>
+
+<table style="width:100%;background-color:green">
+	<tr>
+		<th>TORNEO ACTUAL</th>
+		<th>{% if torneo == None %}
+				<a href ="/torneo/equipo/empezarTorneo">Empezar Torneo</a>
+			{% elif torneo.fechaFin != None %}
+				<p> No puedes realizar ninguna accion hasta el proximo semestre</p>
+			{% else %}
+				<a href ="/torneo/equipo/finalizarTorneo">Finalizar Torneo</a>
+			{% endif %}
+		</th>
+		
+	</tr>
+	
+</table>
+{% endblock %}

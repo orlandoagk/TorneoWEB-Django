@@ -1,0 +1,29 @@
+{% extends "torneo/index.html" %}
+
+{% block content %}
+<a href="historialTorneos" style="text-align:left"><h3>HISTORIAL DE TORNEOS</h3></a>
+<h2 style="background-color:green">FASE DE GRUPOS</h2>
+<table style="width:100%;background-color:green">
+	<tr>
+		<th>A</th>
+		<th>B</th>
+		<th>C</th>
+		<th>D</th>
+		<th>E</th>
+	</tr>
+	{% for i in matriz %}
+	<tr>
+		{% for i2 in i %}
+			{% if i2 == None %}
+				<th> No hay inscrito</th>
+	    	
+	    	{% else %}
+	    		<th>{{ i2.user.nombreEquipo }}</th>
+	    	{% endif %}
+	    {% endfor %}
+		    
+	</tr>
+		
+	{% endfor %}
+</table>
+{% endblock %}

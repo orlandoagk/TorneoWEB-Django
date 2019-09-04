@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+{% load static %}
+<html leng="es">
+
+<head>
+<title>Torneo de Futbol</title>
+<link rel="stylesheet" href="{% static 'torneo/estiloIndex.css'%}">
+</head>
+<body>
+	<header>
+	<img id = "imagenCabeceraUno" src="{% static 'torneo/images/imagenCabecera.png'%}">
+	<h1 id="textoCabecera">Torneo de Futbol</h1>
+	<img id = "imagenCabeceraDos" src="{% static 'torneo/images/imagenCabecera.png'%}">
+	
+	</header>
+
+	<hr/>
+	<nav>
+
+			<a href="/torneo"><img id ="Home" src="{% static 'torneo/images/button_home.png'%}">
+</a>
+
+
+<p>
+			<a href="/torneo/posiciones"><img id ="Posiciones" src="{% static 'torneo/images/button_posiciones.png'%}">
+</a>
+</p>
+
+<p>
+			<a href="/torneo/fotos"><img id ="Fotos" src="{% static 'torneo/images/button_fotos.png'%}">
+</a>
+</p>
+<p>
+			<a href="/torneo/equipo"><img id ="Equipo" src="{% static 'torneo/images/button_equipo.png'%}">
+</a>
+</p>
+		
+	</nav>
+	<hr/>
+
+	<section style="background-color:green;width:100%">
+		<table style="background-color:green;width:100%">
+		<tr>
+			<th><article><p id="fechaActual">XX/XX/XXXX</p></article></th>
+		<article>
+		<p><th>
+		{% if user.is_authenticated %}
+	 		<h4>Bienvenid@ <b>{{ user.username }}</b>, <a href="/logout">logout</a></h4>
+		{% else %}
+			<h4>Bienvenido te toca hacer <a href="/login"> login</a>, si no tienes cuenta <a href="/registrar"> creala</a></h4>
+		{% endif %}
+		</th>
+		</tr>
+		</table>
+		</p>
+		</article>
+
+		{% block content %}
+		{% endblock %}
+	</section>
+	<hr/>
+	<footer>
+	<p><h4 id = "footerEscuela"> Desarrollada por: </h4>
+	<ul>
+	<li>Orlando Gelves</li>
+	</ul></p>
+	<p id= "footerEscuela">Escuela Colombiana de Ingenieria Julio Garavito</p>
+
+	</footer>
+{% block javascript %}
+	<script src="{% static 'js/primerJavaScript.js' %}"></script>
+	<script src="{% static 'js/menusJS.js'%}"></script>
+{% endblock %}
+
+</body>
+</html>

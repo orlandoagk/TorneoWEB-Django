@@ -1,0 +1,37 @@
+<h3><a href="eliminar">ELIMINAR INTEGRANTE</a></h3>
+<form method="post">
+    {% csrf_token %}
+    <div class="row">
+		<div class="col-md-6-md-offset-3">
+			<div class="form-group">
+				<label for="nombreCompleto">Nombre Completo:</label>
+				<input class="form-control" type="text" name="nombreCompleto" value={{ integrante.nombreCompleto }}>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6-md-offset-3">
+			<div class="form-group">
+				<label for="apellidoCompleto">Apellido Completo:</label>
+				<input class="form-control" type="text" name="apellidoCompleto" value={{ integrante.apellidoCompleto }}>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6-md-offset-3">
+			<div class="form-group">
+				<label for="semestre">Semestre:</label>
+				<input class="form-control" type="text" name="semestre" value={{integrante.semestre}}>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6-md-offset-3">
+			<div class="form-group">
+				<label for="carne">Carne:</label>
+				<input class="form-control" type="text" name="carne" value={{integrante.carne}}>
+			</div>
+		</div>
+	</div>
+    <input type="submit" value="Submit">
+</form>
