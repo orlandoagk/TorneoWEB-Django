@@ -1,3 +1,5 @@
+{% extends "torneo/index.html" %}
+{% block content %}
 <h3><a href="eliminar">ELIMINAR INTEGRANTE</a></h3>
 <form method="post">
     {% csrf_token %}
@@ -35,3 +37,4 @@
 	</div>
     <input type="submit" value="Submit">
 </form>
+{% endblock %}

@@ -1,5 +1,8 @@
+{% extends "torneo/index.html" %}
+{% block content %}
 <form method="post">
     {% csrf_token %}
     {{ form }}
     <input type="submit" value="Submit">
 </form>
+{% endblock %}
