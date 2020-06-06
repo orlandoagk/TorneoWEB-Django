@@ -25,7 +25,7 @@ SECRET_KEY = 'k852k$(wb9*-b8na&@$sfs8lxx_=16*we907!0!s_la$5r(7#@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*','torneosistemas.azurewebsites.net']
 
 
 # Application definition
